@@ -369,7 +369,15 @@ class Union_Find():
             if x.subtree_size == y.subtree_size:
                 y.subtree_size += 1
 
+        """
+        Question 11
 
+        We can prove a tree of n nodes has n-1 edges by reasonning by recurrence.
+        There is only one edge between two nodes.
+        Giving that a tree has no loop, each time we add a node, we add a single edge.
+        Therefore we always have n-1 edges on a n-nodes graph
+        
+        """
 def kruskal(input_graph):
     """
     Gives the minimum spanning tree (MST) of an input graph using Kruskal's algorithm
