@@ -118,6 +118,20 @@ class Graph:
 
         return parcours
 
+        # La complexité de l'algorithme dépend de celle de bfs.
+
+        # La complexité temporelle de bfs est O(|V| + |E|) avec V le nombre de noeuds et E le nombre d'arrêtes.
+
+        # En effet, la boucle for a une complexité temporelle O(|V|) car il y a au plus V ancêtres
+
+        # et la boucle while a une complexité O(|E|) car il y a au plus E arrêtes.
+
+        # get_path_with_power y fait appel une fois à bfs donc sa complexité temporelle est O(|V| + |E|) également.
+
+        # La complexité spatiale est O(|V|) pour dfs et get_path_with_power car on utilise
+
+        # la liste ancêtre et une liste parcours qui ont toutes les deux une longueur maximale V.
+
 
     def dfs(self, node, visites, composantes, power=1000000000):  
     #on a rajouté une condition de puissance afin de pouvoir conditionner les chemins possible dans la question 
@@ -266,7 +280,18 @@ class Graph:
 
         #en testant cette fonction sur le network.2 avec comme noeuds 1 et 12, voici le résultat obtenu :
 
-        # ([1, 2, 4, 12], 52761). C'est assez long mais il parvient au résultat sans trop de soucis.  
+        # ([1, 2, 4, 12], 52761). C'est assez long mais il parvient au résultat sans trop de soucis. 
+        
+
+        # La complexité temporelle de cet algorithme est O((|V|+|E|)*log(P)) 
+
+        # avec |V| le nombre de noeuds et P la puissance maximale entre les noeuds parcourus.
+
+        # La boucle while s'exécute log(P) fois au plus
+
+        # et min-power fait appel à la fin à get_path_with_power de complexité O(|V|+|E|),
+
+        # d'où la complexité totale de l'algorithme. 
 
     def connected_components_set(self):
         return set(map(frozenset, self.connected_components()))
@@ -377,6 +402,11 @@ def kruskal(input_graph):
             # and we take into account that the nodes are now connected
             nodes[n1].union(nodes[n2])
     return MST
+
+    # La complexité temporelle de kruskal est O(|V|) et celle de min_power est O((|V|+|E|)*log(P)), 
+
+    # celle de min_power_kruskal_V1 est donc O(|V| + (|V|+|E|)*log(P)) = O(|V|log|V|)​
+
 
 def min_power_kruskal(input_graph, src, dest):
     """
