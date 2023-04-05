@@ -216,7 +216,7 @@ class Graph:
                 power = i[3]
         return power
     
-     def min_power(self, src, dest):
+    def min_power(self, src, dest):
 
         debut = 1
 
@@ -375,7 +375,7 @@ class Union_Find():
         We can prove a tree of n nodes has n-1 edges by reasonning by recurrence.
         There is only one edge between two nodes.
         Giving that a tree has no loop, each time we add a node, we add a single edge.
-        Therefore we always have n-1 edges on a n-nodes graph
+        Therefore we always have n-1 edges on a n-nodes tree.
         
         """
 def kruskal(input_graph):
@@ -443,7 +443,7 @@ def min_power_kruskal_LCA(input_graph, src, dest, power):
     # Step n° 1: Preprocessing
     MST = kruskal(input_graph)
     # Step n°2: Lowest common ancestor
-  def knapsacked_trucks(filename):
+def cw(filename):
     """
     A main function with embedded driver code and initialisation
     to run the recursive knapsack function below on our graph file
@@ -536,7 +536,7 @@ def knapsack(g, paths_cost_profit, Budget, N):
 
 
 def greedy_approach(input_graph, routesfile, ):
-        """
+    """ 
     Idea: start by sorting the paths by profit and then go one by one
     This relies heavily on our min_power_LCA earlier on
     ***
@@ -544,7 +544,7 @@ def greedy_approach(input_graph, routesfile, ):
     Possibly the last truck + the leftover budget would have been better spent 
     by saturating the budget completely on less expensive trucks
     *** 
-        """
+    """  
         paths_and_trucks = []
         Budget = 25*10**9
         # Step n° 1: create a dict with path, min_power, truck, profit
@@ -563,4 +563,4 @@ def greedy_approach(input_graph, routesfile, ):
                 paths_and_trucks.append()
                 Budget = Budget - cost()
         # We now have a list of trucks and associated paths, sorted by profit
-        return paths_and_trucks    
+        return paths_and_trucks
